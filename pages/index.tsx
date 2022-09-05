@@ -5,11 +5,9 @@ import Sidebar from "../components/Sidebar";
 import { options } from "../utils";
 
 import { useState } from "react";
-import Link from "next/link";
 
 const Home: NextPage = ({ res }) => {
   const [category, setCategory] = useState("New");
-
   return (
     <div>
       <Navbar />

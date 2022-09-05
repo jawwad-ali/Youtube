@@ -23,8 +23,8 @@ const Video = ({
   useEffect(() => {
     setData(videoDetails[0]);
     setSeggestionVideos(suggestions);
-  }, []);
-
+  }, [videoDetails , suggestionVideos]);
+ 
   return (
     <div className="w-full box-border">
       <Navbar />

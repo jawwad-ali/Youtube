@@ -2,15 +2,15 @@ import { FeedProps } from "../interface";
 import { GoVerified } from "react-icons/go";
 import Link from "next/link";
 
-const Feed = ({ videos }: FeedProps) => {
+const Feed = ({ videos }: FeedProps) => { 
   return (
-    <div className="w-full">
-      <div className="flex flex-wrap">
+    <div className="w-full"> 
+      <div className="flex flex-wrap"> 
         {!videos.length ? (
           <div className="flex items-center justify-center w-full">
             <h1 className="text-white text-center font-extrabold text-6xl">
               Loading....
-            </h1>
+            </h1> 
           </div>
         ) : (
           videos?.map((item, idx) => (
