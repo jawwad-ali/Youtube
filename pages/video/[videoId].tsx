@@ -1,14 +1,15 @@
 import ReactPlayer from "react-player/youtube";
 import { DynamicVideoProps, SuggestionVideos } from "../../interface";
 import { useRouter } from "next/router";
-import { useState, useEffect, SetStateAction } from "react";
+import { useState, useEffect } from "react";
 import { GoVerified } from "react-icons/go";
 import Navbar from "../../components/Navbar";
 import { options } from "../../utils";
 import SuggestedVideos from "../../components/SuggestedVideos";
+import Head from "next/head";
 
 const Video = ({
-  videoDetails,
+  videoDetails, 
   suggestions,
 }: {
   videoDetails: DynamicVideoProps;
@@ -23,10 +24,13 @@ const Video = ({
   useEffect(() => {
     setData(videoDetails);
     setSeggestionVideos(suggestions);
-  }, [videoDetails, suggestionVideos]);
+  }, []); 
 
-  return (
+  return ( 
     <div className="w-full box-border">
+      <Head>
+        <title> {data?.snippet?.title}</title>
+      </Head>
       <Navbar />
       <div className="flex flex-col lg:flex-row w-full mt-5">
         {/* Video Side */}
@@ -83,7 +87,7 @@ const Video = ({
     </div>
   );
 };
- 
+
 export default Video;
 
 export async function getServerSideProps({

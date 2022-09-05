@@ -5,11 +5,15 @@ import Sidebar from "../components/Sidebar";
 import { options } from "../utils";
 
 import { useState } from "react";
+import Head from "next/head";
 
 const Home: NextPage = ({ res }: any) => {
   const [category, setCategory] = useState("New");
   return (
     <div>
+      <Head>
+        <title>Youtube</title> 
+      </Head>
       <Navbar />
 
       <div className="flex gap-10">
