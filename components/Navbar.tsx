@@ -3,8 +3,8 @@ import { BsSearch } from "react-icons/bs";
 import Link from "next/link";
 
 const Navbar = () => {
-  return (
-    <div className="w-full bg-[#181818] md:p-4 my-2">
+  return ( 
+    <div className="w-full bg-[#181818]  md:p-4 my-2">
       <div className="flex justify-between w-full">
         <div style={{ cursor: "pointer" }}>
           <Link href="/">

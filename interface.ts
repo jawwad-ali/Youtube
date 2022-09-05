@@ -29,7 +29,7 @@ export interface DynamicVideoProps {
             viewCount: string,
             likeCount: string,
         },
-    ]
+    ] 
 }
 
 export interface SuggestionVideos {

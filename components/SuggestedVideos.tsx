@@ -6,8 +6,6 @@ import { SuggestionVideos } from "../interface";
 const SuggestedVideos = ({ suggestionVideos }: SuggestionVideos) => {
   const [data, setData] = useState<null | any>([]);
 
-  console.log("DATA", suggestionVideos);
-
   useEffect(() => {
     setData(suggestionVideos); 
   }, [data]); 

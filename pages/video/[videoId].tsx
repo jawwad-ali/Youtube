@@ -1,7 +1,7 @@
 import ReactPlayer from "react-player/youtube";
 import { DynamicVideoProps, SuggestionVideos } from "../../interface";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, SetStateAction } from "react";
 import { GoVerified } from "react-icons/go";
 import Navbar from "../../components/Navbar";
 import { options } from "../../utils";
@@ -16,15 +16,15 @@ const Video = ({
 }) => {
   const router = useRouter();
   const { videoId } = router.query;
-
-  const [data, setData] = useState<any | null>();
+ 
+  const [data, setData] = useState<any>();
   const [suggestionVideos, setSeggestionVideos] = useState<any | null>();
 
-  useEffect(() => {
-    setData(videoDetails[0]);
+  useEffect(() => { 
+    setData(videoDetails);
     setSeggestionVideos(suggestions);
-  }, [videoDetails , suggestionVideos]);
- 
+  }, [videoDetails, suggestionVideos]);
+
   return (
     <div className="w-full box-border">
       <Navbar />
@@ -97,7 +97,7 @@ export async function getServerSideProps({
     options
   );
   const final = await res.json();
-
+  console.log("final", final.items[0]);
   // Suggested Videos
   const suggestedVideo = await fetch(
     `https://youtube-v31.p.rapidapi.com/search?relatedToVideoId=${videoId}&part=id%2Csnippet&type=video&maxResults=50`,
@@ -107,7 +107,7 @@ export async function getServerSideProps({
   const suggestedVideoData = await suggestedVideo.json();
   return {
     props: {
-      videoDetails: final.items,
+      videoDetails: final.items[0],
       suggestions: suggestedVideoData.items,
     },
   };

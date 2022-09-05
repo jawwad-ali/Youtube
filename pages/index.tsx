@@ -6,7 +6,7 @@ import { options } from "../utils";
 
 import { useState } from "react";
 
-const Home: NextPage = ({ res }) => {
+const Home: NextPage = ({ res }: any) => {
   const [category, setCategory] = useState("New");
   return (
     <div>
