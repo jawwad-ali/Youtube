@@ -20,9 +20,9 @@ const Feed = ({ videos }: FeedProps) => {
                 style={{ cursor: "pointer" }}
                 key={idx}
               >
-                <div className="videoCard w-[320px] md:w-[358px] lg:[358px] lg:pl-4 mb-2 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+                <div className="videoCard w-[320px] md:w-[358px] lg:w-[358px] lg:pl-4 mb-2 rounded-lg dark:bg-gray-800 dark:border-gray-700">
                   <div className="ml-auto mr-auto">
-                    <img 
+                    <img
                       className="max-w-xs"
                       src={item?.snippet?.thumbnails?.high?.url}
                       alt={item?.snippet?.title}

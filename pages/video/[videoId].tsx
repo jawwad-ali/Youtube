@@ -16,11 +16,11 @@ const Video = ({
 }) => {
   const router = useRouter();
   const { videoId } = router.query;
- 
+
   const [data, setData] = useState<any>();
   const [suggestionVideos, setSeggestionVideos] = useState<any | null>();
 
-  useEffect(() => { 
+  useEffect(() => {
     setData(videoDetails);
     setSeggestionVideos(suggestions);
   }, [videoDetails, suggestionVideos]);
@@ -28,12 +28,12 @@ const Video = ({
   return (
     <div className="w-full box-border">
       <Navbar />
-      <div className="flex flex-col lg:flex-row gap-10 w-full ">
+      <div className="flex flex-col lg:flex-row w-full mt-5">
         {/* Video Side */}
-        <div className="w-[100%] lg:w-8/12">
+        <div className="lg:w-8/12">
           <div className="flex box-border h-[80vh]">
             <div className="flex flex-col w-full box-border">
-              <div className="h-full w-full">
+              <div className="h-full">
                 <ReactPlayer
                   url={`https://www.youtube.com/watch?v=${videoId}`}
                   className="react-player"
@@ -43,7 +43,7 @@ const Video = ({
                 />
               </div>
               <div className="mt-5 ml-5 box-border flex flex-col ">
-                <p className="text-white text-xl leading-6 w-full">
+                <p className="text-white text-md md:text-xl leading-6 w-full">
                   {data?.snippet?.title}
                 </p>
                 <div className="mt-4 flex justify-between">
@@ -54,7 +54,7 @@ const Video = ({
                     </p>
                   </div>
                   <div className="flex gap-3 text-[#AAAAAA]">
-                    <p className="">
+                    <p>
                       {data?.statistics?.viewCount
                         .toString()
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
@@ -83,7 +83,7 @@ const Video = ({
     </div>
   );
 };
-
+ 
 export default Video;
 
 export async function getServerSideProps({
