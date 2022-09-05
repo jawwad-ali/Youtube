@@ -24,13 +24,13 @@ const Sidebar = ({ category, setCategory }: IProps) => {
 
   return (
     <div className="flex">
-      <div className="bg-[#181818] border-r-2  m-2 ml-4 mt-3 text-xl">
+      <div className="bg-[#181818] border-r-2  mt-3 text-xl">
         <div
           onClick={() => setShowSidebar((prev) => !prev)}
           className="block xl:hidden m-2 ml-4 mt-3 text-xl text-white"
         >
           {showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
-        </div>
+        </div> 
 
         {showSidebar && (
           <div className="xl:w-52 w-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0 p-3">

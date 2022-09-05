@@ -16,7 +16,7 @@ const Home: NextPage = ({ res }: any) => {
         <Sidebar category={category} setCategory={setCategory} />
 
         <div className=" w-full">
-          <p className="text-white text-3xl font-bold">
+          <p className="text-white text-3xl mt-4 font-bold">
             {category} <span className="text-red-600 font-bold">Videos</span>
           </p>
           <Feed videos={res.items} />

@@ -16,13 +16,13 @@ const Feed = ({ videos }: FeedProps) => {
           videos?.map((item, idx) => (
             <Link href={`/video/${item?.id?.videoId}`} key={idx}>
               <div
-                className="flex mt-2 mb-5 overflow-hidden"
+                className="flex mt-2 mb-5 -ml-3 overflow-hidden"
                 style={{ cursor: "pointer" }}
                 key={idx}
               >
-                <div className="videoCard w-[320px] lg:pl-4 mt-4 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+                <div className="videoCard w-[320px] md:w-[358px] lg:[358px] lg:pl-4 mb-2 rounded-lg dark:bg-gray-800 dark:border-gray-700">
                   <div className="ml-auto mr-auto">
-                    <img
+                    <img 
                       className="max-w-xs"
                       src={item?.snippet?.thumbnails?.high?.url}
                       alt={item?.snippet?.title}

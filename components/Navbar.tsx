@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return ( 
-    <div className="w-full bg-[#181818]  md:p-4 my-2">
+    <div className="w-full md:p-4">
       <div className="flex justify-between w-full">
         <div style={{ cursor: "pointer" }}>
           <Link href="/">
@@ -17,7 +17,7 @@ const Navbar = () => {
             <input
               placeholder="Search"
               className="rounded-full md:w-[350px] p-2 outline-none border-none bg-transparent"
-            />
+            /> 
             <BsSearch className="mr-4 text-xl text-red-600" />
           </div>
         </div>
